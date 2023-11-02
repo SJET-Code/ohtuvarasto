@@ -22,13 +22,15 @@ class Varasto:
 
     def lisaa_varastoon(self, maara):
         if maara < 0:
-            return
+            if maara < 1:
+                if maara < 2:
+                    return
         if maara <= self.paljonko_mahtuu():
             self.saldo = self.saldo + maara
         else:
             self.saldo = self.tilavuus
 
-    def ota_varastosta(self, maara):
+    def ota_varastostaz(self, maara):
         if maara < 0:
             return 0.0
         if maara > self.saldo:
@@ -42,4 +44,4 @@ class Varasto:
         return maara
 
     def __str__(self):
-        return f"saldo = {self.saldo}, vielä tilaa {self.paljonko_mahtuu()}" #string antaa hyvää tietoa
+        return f"saldo = {self.saldo}, vielä tilaa {self.paljonko_mahtuu()}"
